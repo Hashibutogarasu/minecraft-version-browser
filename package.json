@@ -1,0 +1,125 @@
+{
+  "name": "minecraft-version-browser",
+  "displayName": "Minecraft version browser",
+  "description": "This extension allows you to browse the versions and assets of Minecraft.",
+  "version": "0.0.1",
+  "publisher": "Hashibutogarasu",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "menus": {
+      "view/item/context": [
+        {
+          "command": "minecraft-version-browser.openFile",
+          "when": "view == minecraft-version-browser.asset_browser"
+        },
+        {
+          "command": "minecraft-version-browser.deleteFolder",
+          "when": "view == minecraft-version-browser.asset_browser"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "minecraft-version-browser.version_browser.refresh",
+          "when": "view == minecraft-version-browser.version_browser"
+        },
+        {
+          "command": "minecraft-version-browser.asset_browser.refresh",
+          "when": "view == minecraft-version-browser.asset_browser"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "minecraft-version-browser-version-browser",
+          "title": "Minecraft version browser",
+          "icon": "resources/icon.svg"
+        },
+        {
+          "id": "minecraft-version-browser-asset-browser",
+          "title": "Minecraft asset browser",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "minecraft-version-browser-version-browser": [
+        {
+          "id": "minecraft-version-browser.version_browser",
+          "name": "Versions"
+        },
+        {
+          "id": "minecraft-version-browser.asset_browser",
+          "name": "Assets"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "minecraft-version-browser.openPackage",
+        "title": "Open Package"
+      },
+      {
+        "command": "minecraft-version-browser.openFile",
+        "title": "Open Directory"
+      },
+      {
+        "command": "minecraft-version-browser.refresh",
+        "title": "Refresh all"
+      },
+      {
+        "command": "minecraft-version-browser.version_browser.refresh",
+        "title": "Refresh Versions"
+      },
+      {
+        "command": "minecraft-version-browser.asset_browser.refresh",
+        "title": "Refresh Assets"
+      },
+      {
+        "command": "minecraft-version-browser.deleteFolder",
+        "title": "Delete this file or folder"
+      },
+      {
+        "command": "minecraft-version-browser.createCache",
+        "title": "Create a cache of postonmeta"
+      }
+    ]
+  },
+  "extensionDependencies": [
+    "mindaro-dev.file-downloader"
+  ],
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "pnpm run compile && pnpm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.7",
+    "@types/mocha": "^10.0.2",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.96.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
+    "@vscode/test-electron": "^2.3.4",
+    "eslint": "^8.50.0",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@microsoft/vscode-file-downloader-api": "^1.0.1",
+    "@vscode-utility/fs-browserify": "^1.0.9",
+    "adm-zip": "^0.5.16"
+  }
+}
