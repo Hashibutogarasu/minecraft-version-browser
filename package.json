@@ -2,7 +2,7 @@
   "name": "minecraft-version-browser",
   "displayName": "Minecraft version browser",
   "description": "This extension allows you to browse the versions and assets of Minecraft.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "Hashibutogarasu",
   "license": "MIT",
   "engines": {
