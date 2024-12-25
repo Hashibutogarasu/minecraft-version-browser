@@ -2,7 +2,7 @@
 
 ## Preview
 
-https://cdn.karasu256.com/VSCode/extensions/minecraft-version-browser/preview_1.mp4
+[![Preview](https://cdn.karasu256.com/VSCode/extensions/minecraft-version-browser/preview_1.gif)](https://cdn.karasu256.com/VSCode/extensions/minecraft-version-browser/preview_1.gif)
 
 This extension allows you to download a minecraft assets and browse.
 
