@@ -3,7 +3,7 @@ import { Version } from './api/models/version';
 import { VersioTypeBrowserProvider } from './provider/versionbrowser';
 import { FileBrowserProvider, FileTreeItem } from './provider/filebrowser';
 import { openPackage } from './commands/openpackage';
-import { openFileCommand } from './commands/openfile';
+import { openFileCommand, openFolderCommand } from './commands/openfile';
 import { refreshAllCommand } from './commands/refresh/refresh_all';
 import { deleteFolderCommand } from './commands/deletefolder';
 import { createCacheCommand } from './commands/createcache';
@@ -42,8 +42,10 @@ export async function activate(context: vscode.ExtensionContext) {
 	}));
 
 	const openFile = vscode.commands.registerCommand("minecraft-version-browser.openFile", openFileCommand);
-
 	context.subscriptions.push(openFile);
+
+	const openFolder = vscode.commands.registerCommand("minecraft-version-browser.openFolder", openFolderCommand);
+	context.subscriptions.push(openFolder);
 
 	const refreshCommand = vscode.commands.registerCommand("minecraft-version-browser.refresh", async () => {
 		versionBrowser.message = "Refreshing...";
