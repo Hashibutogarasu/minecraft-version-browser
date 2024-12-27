@@ -2,7 +2,7 @@
   "name": "minecraft-version-browser",
   "displayName": "Minecraft version browser",
   "description": "This extension allows you to browse the versions and assets of Minecraft.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "Hashibutogarasu",
   "license": "MIT",
   "engines": {
@@ -69,11 +69,11 @@
     "commands": [
       {
         "command": "minecraft-version-browser.openPackage",
-        "title": "Open Package"
+        "title": "Open package"
       },
       {
         "command": "minecraft-version-browser.openFile",
-        "title": "Open Directory"
+        "title": "Open directory in workspace"
       },
       {
         "command": "minecraft-version-browser.refresh",
@@ -81,11 +81,11 @@
       },
       {
         "command": "minecraft-version-browser.version_browser.refresh",
-        "title": "Refresh Versions"
+        "title": "Refresh versions"
       },
       {
         "command": "minecraft-version-browser.asset_browser.refresh",
-        "title": "Refresh Assets"
+        "title": "Refresh assets"
       },
       {
         "command": "minecraft-version-browser.deleteFolder",

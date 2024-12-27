@@ -8,4 +8,10 @@ export async function openFileCommand(file: FileTreeItem) {
   if (stat.type === vscode.FileType.File) {
     await vscode.commands.executeCommand("vscode.open", vscode.Uri.file(uri));
   }
+  else if (stat.type === vscode.FileType.Directory) {
+    const folderPathParsed = uri.split(`\\`).join(`/`);
+    // Updated Uri.parse to Uri.file
+    const folderUri = vscode.Uri.file(folderPathParsed);
+    vscode.commands.executeCommand(`vscode.openFolder`, folderUri);
+  }
 }
